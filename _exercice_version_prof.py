@@ -2,52 +2,64 @@
 # -*- coding: utf-8 -*-
 
 
-import math
+def is_even_len(string: str) -> bool:
+    if len(string) % 2 == 0:
+        return True
+
+    return False
 
 
-def square_root(a: float) -> float:
-    return 0.0
+def remove_third_char(string: str) -> str:
+    return string[0:2] + string[3:]
 
 
-def square(a: float) -> float:
-    return 0.0
+def replace_char(string: str, old_char: str, new_char: str) -> str:
+    for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[:i] + new_char + string[i + 1:]
+
+    return string
 
 
-def average(a: float, b: float, c: float) -> float:
-    return 0.0
+def get_number_of_char(string: str, char: str) -> int:
+    number_of_char = 0
+    for c in string:
+        if c == char:
+            number_of_char += 1
+
+    return number_of_char
 
 
-def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+def get_number_of_words(sentence: str, word: str) -> int:
+    words = sentence.split()
+    number_of_word = 0
+    for w in words:
+        if w == word:
+            number_of_word += 1
 
-
-def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
-
-
-def to_celsius(temperature: float) -> float:
-    return 0.0
-
-
-def to_farenheit(temperature: float) -> float:
-    return 0.0
+    return number_of_word
 
 
 def main() -> None:
-    print(f"La racine carré de 144 est : {square_root(144)}")
+    chaine = "Bonjour!"
+    if is_even_len(chaine):
+        print(f"Le nombre de caractère dans la chaine {chaine} est pair")
+    else:
+        print(f"Le nombre de caractère dans la chaine {chaine} est impair")
 
-    print(f"Le carré de 12 est : {square(12)}")
+    chaine = "salut monde!"
+    print(f"On supprime le 3e caratère dans la chaine: {chaine}. Résultat : {remove_third_char(chaine)}")
 
-    print(f"Moyenne des nombres 2, 4, 6: {average(2, 4, 6)}")
+    chaine = "hello world!"
+    print(
+        f"On remplace le caratère w par le caractère z dans la chaine: {chaine}. Résultat : {replace_char(chaine, 'w', 'z')}")
 
-    print(f"Conversion de 100 degres, 2 minutes et 45 secondes en radians: {to_radians(180, 2, 45)}")
+    print(f"Le nombre d'occurrence de l dans hello est : {get_number_of_char(chaine, 'l')}")
 
-    degrees, minutes, seconds = to_degrees(1.0)
-    print(f"Conversion de 1 radian en degres: {degrees} degres, {minutes} minutes et {seconds} secondes")
-
-    print(f"Conversion de 100 Celsius en Farenheit: {to_farenheit(100.0)}")
-    print(f"Conversion de 451 Farenheit en Celsius: {to_celsius(451.0)}")
+    chaine = "Baby shark doo doo doo doo doo doo"
+    print(f"L'occurence du mot doo dans la chaine {chaine} est: {get_number_of_words(chaine, 'doo')}")
 
 
 if __name__ == '__main__':
     main()
+
