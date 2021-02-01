@@ -3,41 +3,23 @@
 
 
 def is_even_len(string: str) -> bool:
-    if len(string) % 2 == 0:
-        return True
-
-    return False
+    pass
 
 
 def remove_third_char(string: str) -> str:
-    return string[0:2] + string[3:]
+    pass
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    for i in range(len(string)):
-        if string[i] == old_char:
-            string = string[:i] + new_char + string[i + 1:]
-
-    return string
+    pass
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    number_of_char = 0
-    for c in string:
-        if c == char:
-            number_of_char += 1
-
-    return number_of_char
+    pass
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    words = sentence.split()
-    number_of_word = 0
-    for w in words:
-        if w == word:
-            number_of_word += 1
-
-    return number_of_word
+    pass
 
 
 def main() -> None:
@@ -51,8 +33,7 @@ def main() -> None:
     print(f"On supprime le 3e caratère dans la chaine: {chaine}. Résultat : {remove_third_char(chaine)}")
 
     chaine = "hello world!"
-    print(
-        f"On remplace le caratère w par le caractère z dans la chaine: {chaine}. Résultat : {replace_char(chaine, 'w', 'z')}")
+    print(f"On remplace le caratère w par le caractère z dans la chaine: {chaine}. Résultat : {replace_char(chaine, 'w', 'z')}")
 
     print(f"Le nombre d'occurrence de l dans hello est : {get_number_of_char(chaine, 'l')}")
 
@@ -62,4 +43,3 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-
